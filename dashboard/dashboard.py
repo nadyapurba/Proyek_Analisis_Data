@@ -4,9 +4,6 @@ import numpy as np
 import seaborn as sns
 import streamlit as st
 
-sns.set(style='white')
-st.set_option('deprecation.showPyplotGlobalUse', False)
-
 
 df = pd.read_csv("day.csv")
 
