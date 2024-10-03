@@ -1,1 +1,1 @@
-Link Streamlit: https://projectnadya.streamlit.app/
+https://projectnadya.streamlit.app/
