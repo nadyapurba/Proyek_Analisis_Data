@@ -22,12 +22,12 @@ workingday_plt = workingday_f(df)
 
 
 with st.sidebar:
-    st.image("https://i.pinimg.com/236x/e4/09/6f/e4096f0afce5bbb76ef00df733a2e951.jpg")
-    selected_intervals = st.multiselect('Select humidity intervals:', humidity_plt['Humidity'].unique())
+    st.image("https://media.istockphoto.com/id/682172286/id/video/sepeda.jpg?s=256x256&k=20&c=vPr7ZE5UzdJODBDasra0l1bzrR5o892msXN_uX6pN2E=")
+    selected_intervals = st.multiselect('Pilih interval kelembapan:', humidity_plt['Humidity'].unique())
     day_select = st.multiselect("Filter Hari kerja", workingday_plt['Workingday'].unique(), default=workingday_plt['Workingday'].unique())
 
 st.header('Bicycle Rental Analysis :bike: ')
-st.subheader('Total Customer :bike:')
+st.subheader('Jumlah Customer :bike:')
 
 columns = st.columns(1)
 
@@ -38,7 +38,7 @@ with columns[0]:
 
 # Container for filter humidity
 with st.container():
-    st.subheader('distribusi penyewaan sepeda berdasarkan waktu pada hari kerja dan hari libur:')
+    st.subheader('Distribusi penyewaan sepeda berdasarkan waktu pada hari kerja dan hari libur:')
 
 if selected_intervals:
     filter_humidity = humidity_plt[humidity_plt['Humidity'].isin(selected_intervals)]
@@ -58,7 +58,7 @@ if not filter_humidity.empty:
     plt.tight_layout()
     st.pyplot()
 else:
-    st.write("No data available for the selected intervals.")
+    st.write("Tidak ada data yang tersedia")
 
 
 with st.container():
@@ -83,4 +83,4 @@ if not workingday_plot.empty:
     plt.tight_layout()
     st.pyplot()
 else:
-    st.write("Mohon Untuk Memilih Minimal Satu Filter")
+    st.write("Mohon untuk memilih minimal satu.")
